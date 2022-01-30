@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+
+body {
+  min-height: 100vh;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    min-width: 300px;
+    min-height: 400px;
+
+    background: #333;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+      10px 10px 70px rgba(0, 0, 0, 0.25),
+      inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+      inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+
+    position: relative;
+
+    padding: 40px 30px 30px;
+
+    .calculator {
+      display: grid;
+
+      position: relative;
+
+      .value {
+        height: 100px;
+        width: calc(100% - 30px);
+
+        background: #a7af7c;
+
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+
+        font-size: 2em;
+
+        grid-column: span 4;
+
+        left: 10px;
+
+        margin-bottom: 10px;
+
+        outline: none;
+
+        position: relative;
+        padding: 10px;
+
+        text-align: right;
+      }
+
+      .clear {
+        width: 180px;
+
+        background: #f00;
+
+        grid-column: span 2;
+
+        &::before{
+            background: linear-gradient(90deg, #d20000, #ffffff5c);
+
+            border-left: 1px solid #fff4;
+            border-right: 1px solid #fff4;
+            border-top: 1px solid #fff4;
+        }
+      }
+
+      .plus{
+          grid-row: span 2;
+          height:  180px;
+
+      }
+
+      .equal{
+
+        background:  #2196f3;
+
+        &::before{
+            background: linear-gradient(90deg, #1479c9, #ffffff5c);
+
+            border-left: 1px solid #fff4;
+            border-right: 1px solid #fff4;
+            border-top: 1px solid #fff4;
+
+        }
+
+      }
+
+      span {
+        height: 80px;
+        width: 80px;
+
+        background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+        border-radius: 10px;
+        box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+          inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+          10px 20px 25px rgba(0, 0, 0, 0.4);
+
+        color: #fff;
+
+        cursor: pointer;
+
+        display: grid;
+
+        font-size: 20px;
+        font-weight: 400;
+
+        margin: 8px;
+
+        position: relative;
+
+        place-items: center;
+
+        user-select: none;
+
+        &:active {
+          filter: brightness(1.5);
+        }
+
+        &::before {
+          background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+          border-radius: 10px;
+
+          border-left: 1px solid #0004;
+          border-right: 1px solid #0004;
+          border-top: 1px solid #0009;
+
+          box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+          10px 5px 10px rgba(0, 0, 0, 0.15);
+
+          content: "";
+
+          position: absolute;
+
+          top: 3px;
+          right: 12px;
+          bottom: 14px;
+          left: 4px;
+        }
+
+        i {
+          font-style: normal;
+          font-size: 1.5em;
+
+          position: relative;
+
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
